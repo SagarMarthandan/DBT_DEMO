@@ -7,9 +7,9 @@ select
     {{DAY_TYPE('STARTED_AT')}} AS DAY_TYPE,
     {{STATION_OF_YEAR('STARTED_AT')}} AS STATION_OF_YEAR      
 from
-    {{source("demo", "bike")}}
-where 
-    STARTED_AT != 'started_at'
+    {{ ref('stg_bike') }}
+--where 
+    --STARTED_AT != 'started_at'
 
 )
 
